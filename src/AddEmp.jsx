@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Joi from "joi-browser";
 
 function AddEmp(props) {
   const [emp, setEmp] = useState({

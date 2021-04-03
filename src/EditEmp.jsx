@@ -54,12 +54,10 @@ function EditEmp(props) {
     props.history.push("/list");
   };
 
-  const { arr } = props.arr;
-
   const loadEmp = () => {
     console.log(id);
     for (let emp of props.arr) {
-      if (emp.id == id) {
+      if (emp.id === id) {
         setEmp(emp);
       }
     }

@@ -1,8 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useState } from "react";
 import NavBar from "./NavBar";
-import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import EmpList from "./EmpList";
 import Home from "./Home";
 import AddEmp from "./AddEmp";
@@ -14,14 +13,17 @@ function App() {
     { id: 1, name: "DEMOEMP", bdate: "1995-01-01", dept: "FSD", xp: "4" },
   ]);
 
+  const [idProvider, setIdProvider] = useState(2);
+
   function handleAdd(emp) {
-    emp.id = empArray.length + 1;
+    emp.id = idProvider;
     console.log(emp);
     const tempEmp = [...empArray];
     tempEmp.push(emp);
     console.log(tempEmp);
     setEmpArray(tempEmp);
     console.log(empArray);
+    setIdProvider(idProvider + 1);
     return true;
   }
 
